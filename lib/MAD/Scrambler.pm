@@ -12,7 +12,7 @@ use List::Util qw{ shuffle };
 
 use Const::Fast;
 
-const our $MAX_NUMBER => 2**32;
+const our $MAX_BIT_MASK => 2**32;
 
 has 'scrambler' => (
     is      => 'ro',
@@ -39,7 +39,7 @@ has 'unscrambler' => (
 
 has 'bit_mask' => (
     is      => 'ro',
-    default => sub { int rand $MAX_NUMBER },
+    default => sub { int rand $MAX_BIT_MASK },
 );
 
 sub encode {
